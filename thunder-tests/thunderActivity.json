@@ -50,12 +50,50 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-08-23T17:30:33.495Z",
-    "modified": "2022-08-23T22:45:06.778Z",
+    "modified": "2022-08-24T15:28:00.802Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"name\": \"Habsadasdasdasfsgbaççççç\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "32620965-0b32-475c-9423-8eb50c95740c",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://www.thunderclient.com/sales",
+    "url": "https://www.thunderclient.com/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-08-24T14:41:43.841Z",
+    "modified": "2022-08-24T14:44:18.410Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"productId\": 2,\n  \"quantity\":1\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c0dfe514-91b4-4c11-ba16-b77936d952e2",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost/sales",
+    "url": "localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-08-24T14:44:34.779Z",
+    "modified": "2022-08-24T19:19:29.210Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": " [\n    {\n      \"productId\": 1,\n      \"quantity\":1\n    },\n    {\n      \"productId\": 2,\n      \"quantity\":5\n    }\n  ]",
       "form": []
     },
     "tests": []

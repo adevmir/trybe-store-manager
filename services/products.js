@@ -23,4 +23,12 @@ async function create(name) {
   };
 }
 
-module.exports = { getAll, getById, create };
+async function registerSale(data) {
+  const newData = await productsModels.registerSale(data);
+  return {
+    message: newData,
+    code: 201,
+  };
+}
+
+module.exports = { getAll, getById, create, registerSale };

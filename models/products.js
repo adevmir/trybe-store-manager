@@ -18,4 +18,18 @@ async function create(name) {
   return { id: products.insertId, name };
 }
 
-module.exports = { getAll, getById, create };
+async function registerSale(data) {
+  const [sale] = await connection
+    .execute('INSERT INTO StoreManager.sales (id) VALUES (NULL)');
+  await Promise.all(data.map((s) =>
+    connection.execute(
+      'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)', [
+      sale.insertId,
+      s.productId,
+      s.quantity,
+    ],
+)));
+  return { id: sale.insertId, itemsSold: data };
+}
+
+module.exports = { getAll, getById, create, registerSale };

@@ -18,18 +18,10 @@ async function create(name) {
   return { id: products.insertId, name };
 }
 
-async function registerSale(data) {
-  const [sale] = await connection
-    .execute('INSERT INTO StoreManager.sales (id) VALUES (NULL)');
-  await Promise.all(data.map((s) =>
-    connection.execute(
-      'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)', [
-      sale.insertId,
-      s.productId,
-      s.quantity,
-    ],
-)));
-  return { id: sale.insertId, itemsSold: data };
+async function edit(name, id) {
+  await connection
+    .execute('UPDATE StoreManager.products SET name = (?) WHERE id = (?);', [name, id]);
+  return { id, name };
 }
 
-module.exports = { getAll, getById, create, registerSale };
+module.exports = { getAll, getById, create, edit };

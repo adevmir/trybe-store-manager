@@ -21,4 +21,16 @@ const create = async (req, res) => {
   return res.status(code).json(message);
 };
 
-module.exports = { getAll, getById, create };
+const edit = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await productsServices.getById(id);
+    const { name } = req.body;
+    const { message, code } = await productsServices.edit(name, id);
+    return res.status(code).json(message);
+    } catch (error) {
+    return res.status(404).json({ message: error.message });
+  }
+};
+
+module.exports = { getAll, getById, create, edit };

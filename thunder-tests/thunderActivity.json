@@ -50,7 +50,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-08-23T17:30:33.495Z",
-    "modified": "2022-08-24T15:28:00.802Z",
+    "modified": "2022-08-24T21:53:03.609Z",
     "headers": [],
     "params": [],
     "body": {
@@ -84,11 +84,11 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost/sales",
-    "url": "localhost:3000/sales",
-    "method": "POST",
+    "url": "localhost:3000/sales/1",
+    "method": "GET",
     "sortNum": 0,
     "created": "2022-08-24T14:44:34.779Z",
-    "modified": "2022-08-24T19:19:29.210Z",
+    "modified": "2022-08-24T22:09:57.466Z",
     "headers": [],
     "params": [],
     "body": {

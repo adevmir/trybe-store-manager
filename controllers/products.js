@@ -21,9 +21,4 @@ const create = async (req, res) => {
   return res.status(code).json(message);
 };
 
-const registerSale = async (req, res) => {
-  const { message, code } = await productsServices.registerSale(req.body);
-  return res.status(code).json(message);
-};
-
-module.exports = { getAll, getById, create, registerSale };
+module.exports = { getAll, getById, create };

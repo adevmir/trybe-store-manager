@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 const products = require('./controllers/products');
+const sales = require('./controllers/sales');
 const verify = require('./middlewares/verify');
 
 app.use(bodyParser.json());
@@ -19,7 +20,11 @@ app.get('/products/:id', products.getById);
 
 app.post('/products', verify.verifyProduct, products.create);
 
-app.post('/sales', verify.verifySale, products.registerSale);
+app.get('/sales', sales.getAll);
+
+app.get('/sales/:id', sales.getById);
+
+app.post('/sales', verify.verifySale, sales.registerSale);
 
 // não remova essa exportação, é para o avaliador funcionar
 // você pode registrar suas rotas normalmente, como o exemplo acima

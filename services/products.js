@@ -31,4 +31,11 @@ async function edit(name, id) {
   };
 }
 
-module.exports = { getAll, getById, create, edit };
+async function del(id) {
+  await productsModels.del(id);
+  return {
+    code: 204,
+  };
+}
+
+module.exports = { getAll, getById, create, edit, del };

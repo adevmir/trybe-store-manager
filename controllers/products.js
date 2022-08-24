@@ -33,4 +33,15 @@ const edit = async (req, res) => {
   }
 };
 
-module.exports = { getAll, getById, create, edit };
+const del = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await productsServices.getById(id);
+    const { code } = await productsServices.del(id);
+    return res.status(code).end();
+    } catch (error) {
+    return res.status(404).json({ message: error.message });
+  }
+};
+
+module.exports = { getAll, getById, create, edit, del };

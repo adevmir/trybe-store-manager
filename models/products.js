@@ -24,4 +24,9 @@ async function edit(name, id) {
   return { id, name };
 }
 
-module.exports = { getAll, getById, create, edit };
+async function del(id) {
+  await connection
+    .execute('DELETE FROM StoreManager.products WHERE id = (?);', [id]); 
+}
+
+module.exports = { getAll, getById, create, edit, del };
